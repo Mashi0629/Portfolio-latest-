@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poboshini Omashi · Software Engineer</title>
+<meta name="description" content="Portfolio of Poboshini Omashi, software engineering undergraduate at NSBM Green University.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#150822;--surface:#211036;--line:#3a2557;--text:#f6eefc;--muted:#b9a5cf;
+  --pink:#ff4d9d;--violet:#9d4dff;--grad:linear-gradient(100deg,var(--pink),var(--violet));
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'DM Sans','Segoe UI',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#fbf5ff;--surface:#f0e4fa;--line:#dcc7ee;--text:#24103a;--muted:#6b567f;--pink:#d61f78;--violet:#7a2ad6}
+}
+:root[data-theme="light"]{--bg:#fbf5ff;--surface:#f0e4fa;--line:#dcc7ee;--text:#24103a;--muted:#6b567f;--pink:#d61f78;--violet:#7a2ad6}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 1.05rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;margin-bottom:2rem}
+section{padding:6rem 0}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 1.15rem var(--display)}
+.links{display:flex;gap:1.6rem;align-items:center;font-size:.95rem;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:99px;background:var(--grad);color:#fff!important;font-weight:500;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px var(--pink)}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text)!important}
+.btn.ghost:hover{border-color:var(--pink);box-shadow:none}
+#theme{background:none;border:1px solid var(--line);color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem}
+@media(max-width:700px){.links a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:9rem 0 7rem;min-height:88vh;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--x,70%) var(--y,30%),color-mix(in srgb,var(--pink) 32%,transparent),transparent 70%),radial-gradient(700px circle at 15% 90%,color-mix(in srgb,var(--violet) 28%,transparent),transparent 70%)}
+.hero .wrap{position:relative}
+.hi{color:var(--muted);margin-bottom:1.2rem}
+h1{font-size:clamp(3.4rem,11vw,8.5rem);font-weight:800;letter-spacing:-.045em}
+h1 span{display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:34rem;margin:2rem 0 2.4rem;font-size:1.25rem;color:var(--muted)}
+.lede b{color:var(--text);font-weight:500}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.hero h1,.hero .hi,.hero .lede,.hero .cta{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.05s}.hero .lede{animation-delay:.2s}.hero .cta{animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}}
+
+/* about + skills */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem}
+.about p+p{margin-top:1.1rem}
+.about p{color:var(--muted);max-width:34rem}
+.facts{display:grid;gap:1.4rem;align-content:start}
+.facts div{border-left:2px solid var(--violet);padding-left:1.1rem}
+.facts strong{display:block;font:800 1.25rem var(--display)}
+.facts span{color:var(--muted);font-size:.95rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.4rem;margin-top:1rem}
+.skills h3{font-size:1.15rem;margin-bottom:.9rem;color:var(--pink)}
+.skills ul{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0}
+.skills li{padding:.3rem .85rem;border:1px solid var(--line);border-radius:99px;font-size:.92rem;background:var(--surface)}
+@media(max-width:800px){.about{grid-template-columns:1fr;gap:2.5rem}}
+
+/* projects */
+.proj{list-style:none;padding:0;border-top:1px solid var(--line)}
+.proj li{border-bottom:1px solid var(--line)}
+.proj a{display:grid;grid-template-columns:1.4fr 1fr auto;gap:1.5rem;align-items:center;padding:1.8rem .5rem;transition:background .25s,padding .25s}
+.proj a:hover,.proj a:focus-visible{background:var(--surface);padding-inline:1.4rem}
+.proj h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;transition:color .2s}
+.proj a:hover h3{color:var(--pink)}
+.proj p{color:var(--muted);font-size:.98rem;margin-top:.35rem;max-width:32rem}
+.stack{display:flex;flex-wrap:wrap;gap:.4rem;font-size:.85rem;color:var(--muted)}
+.stack span{padding:.15rem .7rem;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+.arrow{font-size:1.5rem;color:var(--muted);transition:transform .25s,color .25s}
+.proj a:hover .arrow{transform:translate(4px,-4px);color:var(--pink)}
+@media(max-width:800px){.proj a{grid-template-columns:1fr auto}.stack{grid-column:1}}
+
+/* journey */
+.tl{position:relative;padding-left:2rem;max-width:44rem}
+.tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--pink),var(--violet))}
+.tl article{position:relative;padding-bottom:2.6rem}
+.tl article::before{content:"";position:absolute;left:-2rem;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--pink)}
+.tl time{color:var(--pink);font-weight:500;font-size:.95rem}
+.tl h3{font-size:1.5rem;margin:.2rem 0 .4rem}
+.tl p{color:var(--muted)}
+
+/* contact */
+.contact{text-align:left}
+.mail{display:inline-block;font:800 clamp(1.5rem,5.4vw,3.6rem)/1.1 var(--display);letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-all;margin:.5rem 0 2rem;padding-bottom:.1em;border-bottom:3px solid transparent;transition:border-color .2s}
+.mail:hover{border-color:var(--pink)}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">Omashi</a>
+  <div class="links">
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#journey">Journey</a>
+    <button id="theme" aria-label="Toggle light and dark theme">◐</button>
+    <a class="btn" href="#contact">Contact me</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <p class="hi">Hi, I'm</p>
+  <h1>Poboshini <span>Omashi</span></h1>
+  <p class="lede">Software engineering undergraduate at NSBM Green University. I build <b>web apps, admin dashboards and mobile apps</b> that are practical and pleasant to use.</p>
+  <div class="cta">
+    <a class="btn" href="#projects">See my projects</a>
+    <a class="btn ghost" href="https://github.com/Mashi0629" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/poboshini-omashi/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <div class="about">
+    <div>
+      <p>I'm a BSc (Hons) Software Engineering student at NSBM Green University, currently interning as a software engineer on a PHP stack. Day to day I build admin panels, dashboards and management systems for real businesses.</p>
+      <p>Outside work I like trying new stacks. I've built mobile apps in Flutter, APIs in Python, and interfaces in React. I always enjoy learning something new.</p>
+    </div>
+    <div class="facts">
+      <div><strong>BSc (Hons) Software Engineering</strong><span>NSBM Green University, 2023 – 2027</span></div>
+      <div><strong>Software Engineering Intern</strong><span>PHP, MySQL and cPanel-hosted web apps</span></div>
+      <div><strong>Sri Lanka</strong><span>Open to collaborations and internships</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Toolbox</h2>
+  <div class="skills" id="skills"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <ul class="proj" id="proj"></ul>
+</div></section>
+
+<section id="journey"><div class="wrap">
+  <h2>Journey</h2>
+  <div class="tl">
+    <article><time>Now</time><h3>Software Engineering Intern</h3><p>Building web applications on a PHP and MySQL stack: admin dashboards, company websites and management systems, deployed on cPanel hosting.</p></article>
+    <article><time>2023 – 2027</time><h3>BSc (Hons) Software Engineering</h3><p>NSBM Green University. Coursework across mobile app development, DevOps and CI/CD, and group projects like BudgetMate.</p></article>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let's build something</h2>
+  <p style="color:var(--muted);max-width:32rem">I'm open to internships, collaborations and new ideas. Send me a message and I'll get back to you.</p>
+  <a class="mail" href="mailto:poboshiniomashi@gmail.com">poboshiniomashi@gmail.com</a>
+  <div class="cta">
+    <a class="btn ghost" href="https://github.com/Mashi0629" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/poboshini-omashi/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 Poboshini Omashi</span><span>Designed and built by me 🌸</span></div></footer>
+
+<script>
+/* ---- EDIT YOUR CONTENT HERE ---- */
+const skills = {
+  "Frontend": ["React","Flutter","JavaScript","TypeScript","HTML","CSS"],
+  "Backend": ["PHP","Python","FastAPI","Node.js","Java","Go"],
+  "Mobile & Data": ["Dart","Flutter","MySQL"],
+  "Tools": ["Git","GitHub","cPanel","phpMyAdmin"]
+};
+const projects = [
+  {name:"Tickit", desc:"A real-time support ticket system.", stack:["PHP"], url:"https://github.com/Mashi0629/Tickit"},
+  {name:"Little Minds App", desc:"A mobile app built with Flutter and Dart.", stack:["Dart","Flutter"], url:"https://github.com/darkfighterk/Little_Minds_App"},
+  {name:"BudgetMate", desc:"A budgeting app built as a group project with my team.", stack:["JavaScript"], url:"https://github.com/Kavinda0140/Budgetmate"},
+  {name:"Digit Recognizer", desc:"Recognizes handwritten digits from 0 to 9.", stack:["Python"], url:"https://github.com/Mashi0629/digit-recognizer"},
+  {name:"Currency Converter", desc:"Converts currencies using live exchange rates.", stack:["Python"], url:"https://github.com/Mashi0629/currency-converter"},
+  {name:"Flappy Bird Clone", desc:"A playable Flappy Bird recreation in the browser.", stack:["JavaScript"], url:"https://github.com/Mashi0629/Flappy-Bird-Clone"}
+];
+/* -------------------------------- */
+const $ = s => document.querySelector(s);
+$('#skills').innerHTML = Object.entries(skills).map(([g,l]) =>
+  `<div><h3>${g}</h3><ul>${l.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
+$('#proj').innerHTML = projects.map(p =>
+  `<li><a href="${p.url}" target="_blank" rel="noopener"><div><h3>${p.name}</h3><p>${p.desc}</p></div>
+   <div class="stack">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div><span class="arrow" aria-hidden="true">↗</span></a></li>`).join('');
+
+const hero = $('.hero');
+hero.addEventListener('pointermove', e => {
+  const r = hero.getBoundingClientRect();
+  hero.style.setProperty('--x', (e.clientX - r.left) + 'px');
+  hero.style.setProperty('--y', (e.clientY - r.top) + 'px');
+});
+$('#theme').addEventListener('click', () => {
+  const root = document.documentElement;
+  const dark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#150822';
+  root.dataset.theme = dark ? 'light' : 'dark';
+});
+</script>
+</body>
+</html>
